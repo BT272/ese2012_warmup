@@ -21,24 +21,24 @@ class User
   end
 
   def payable?(amount)
-    if (credits - amount >=0)
+    if (self.credits - amount >=0)
        true
     end
-    if (credits - amount < 0)
+    if (self.credits - amount < 0)
       false
     end
   end
 
   def pay(amount)
-    credits -= amount
+    self.credits -= amount
   end
 
   def item_add (item)
-     items.push(item)
+    self.items.push(item)
   end
 
   def item_remove(item)
-    items.delete(item)
+    self.items.delete(item)
   end
 
 
