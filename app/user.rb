@@ -1,6 +1,6 @@
 class User
 
-  # Maudlin Kummer 11-120-269
+  # Maudlin Kummer 11-120-169
   # Adrian Kurt 11-108-271
 
   attr_accessor :name, :credits, :items
