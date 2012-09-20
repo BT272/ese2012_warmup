@@ -4,7 +4,7 @@ class Item
   def initialize (name, price, owner)
     self.name= name
     self.price=price
-    self.state= true
+    self.state= false
     self.owner=owner
   end
 
