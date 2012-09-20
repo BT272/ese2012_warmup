@@ -1,3 +1,5 @@
 class User
-  # To change this template use File | Settings | File Templates.
+
+  attr_accessor :name, :credits
+
 end
