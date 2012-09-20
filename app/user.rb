@@ -6,13 +6,13 @@ class User
   attr_accessor :name, :credits, :items
 
   def self.named( name )
-    user = self.new (name)
+    user = self.new(name)
     user
   end
 
-  def initialize (name)
+  def initialize(name)
     self.name = name
-    credits = 100
+    self.credits = 100
     self.items= Array.new
   end
 
@@ -20,7 +20,7 @@ class User
     self.name
   end
 
-  def payable (amount)?
+  def payable?(amount)
     if (credits - amount >=0)
        true
     end
@@ -29,7 +29,7 @@ class User
     end
   end
 
-  def pay (amount)
+  def pay(amount)
     credits -= amount
   end
 
@@ -37,7 +37,7 @@ class User
      items.push(item)
   end
 
-  def item_remove (item)
+  def item_remove(item)
     items.delete(item)
   end
 
