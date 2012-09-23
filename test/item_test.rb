@@ -1,5 +1,7 @@
-# Maudlin Kummer 11-120-169
-# Adrian Kurt 11-108-271
+=begin
+ Authors: Maudlin Kummer 11-120-169
+          Adrian Kurt 11-108-271
+=end
 
 require "test/unit"
 require "app/item"
