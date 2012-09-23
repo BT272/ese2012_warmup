@@ -81,6 +81,6 @@ class User
         s = s + "#{self.items.slice(i).name}" + "\n"
       end
     end
-    return s
+    s
   end
 end

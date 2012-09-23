@@ -55,6 +55,13 @@ class UserTest < Test::Unit::TestCase
     assert(user.payable?(book.price), 'You have enough credits to buy the item.')
   end
 
+  def test_receiving_money
+    user = User.named("Pete")
+    assert_equal(user.credits, 100)
+    user.receive_money(50)
+    assert_equal(user.credits, 150)
+  end
+
   def test_buying_succeeds
     seller = User.named("Pete")
     buyer = User.named("Jack")
@@ -100,6 +107,24 @@ class UserTest < Test::Unit::TestCase
     assert_equal(buyer.items.size, 0)
     assert_equal(seller.credits, 100)
     assert_equal(buyer.credits, 100)
+  end
+
+  def test_just_enough_credits
+    seller = User.named("Pete")
+    buyer = User.named("Jack")
+    book = Item.new("Book", 100, seller)
+    assert_equal(seller.items.size, 0)
+    seller.item_add(book)
+    assert_equal(seller.items.size, 1)
+    seller.activate_for_sale(book)
+    buyer.buy_from(book, seller)
+    assert_equal(seller.items.size, 0)
+    assert_equal(book.owner, "Jack")
+    assert_equal(buyer.items.size, 1)
+    assert_equal(buyer.items.slice(0).name, "Book")
+    assert_equal(book.state, false)
+    assert_equal(buyer.credits, 0)
+    assert_equal(seller.credits, 200)
   end
 
   def test_listing_active_items
