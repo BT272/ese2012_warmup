@@ -4,8 +4,8 @@
 =end
 
 require "test/unit"
-require "app/item"
-require "app/user"
+require "../app/trade/item"
+require "../app/trade/user"
 
 class ItemTest < Test::Unit::TestCase
 
