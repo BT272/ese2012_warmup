@@ -22,11 +22,12 @@ class Item
   end
 
   def buyable?
-    if (self.state == true)
+    if (self.state == true) # AK this is unnecessary, just do
       true
     else
       false
     end
+    # self.state # this
   end
 
 
