@@ -91,6 +91,7 @@ class User
     end
   end
 
+  # AK this should return an array
   def list_active_items
     s = String.new("Active items:")
     for i in 0..(self.items.length-1) # AK iterate over arrays, not indeces
